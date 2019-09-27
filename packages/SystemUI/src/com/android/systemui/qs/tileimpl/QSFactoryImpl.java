@@ -41,6 +41,7 @@ import com.android.systemui.qs.tiles.CellularTile;
 import com.android.systemui.qs.tiles.ColorCorrectionTile;
 import com.android.systemui.qs.tiles.ColorInversionTile;
 import com.android.systemui.qs.tiles.CompassTile;
+import com.android.systemui.qs.tiles.CPUInfoTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DeviceControlsTile;
 import com.android.systemui.qs.tiles.DndTile;
@@ -113,6 +114,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<AODTile> mAODTileProvider;
     private final Provider<CaffeineTile> mCaffeineTileProvider;
     private final Provider<CompassTile> mCompassTileProvider;
+    private final Provider<CPUInfoTile> mCPUInfoTileProvider;
     private final Provider<HeadsUpTile> mHeadsUpTileProvider;
     private final Provider<ReadingModeTile> mReadingModeTileProvider;
     private final Provider<SoundTile> mSoundTileProvider;
@@ -162,6 +164,7 @@ public class QSFactoryImpl implements QSFactory {
             Provider<AODTile> aodTileProvider,
             Provider<CaffeineTile> caffeineTileProvider,
             Provider<CompassTile> compassTileProvider,
+            Provider<CPUInfoTile> cpuInfoTileProvider,
             Provider<HeadsUpTile> headsUpTileProvider,
             Provider<PowerShareTile> powerShareTileProvider,
             Provider<ProfilesTile> profilesTileProvider,
@@ -206,6 +209,7 @@ public class QSFactoryImpl implements QSFactory {
         mAODTileProvider = aodTileProvider;
         mCaffeineTileProvider = caffeineTileProvider;
         mCompassTileProvider = compassTileProvider;
+        mCPUInfoTileProvider = cpuInfoTileProvider;
         mHeadsUpTileProvider = headsUpTileProvider;
         mReadingModeTileProvider = readingModeTileProvider;
         mSoundTileProvider = soundTileProvider;
@@ -296,6 +300,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mCaffeineTileProvider.get();
             case "compass":
                 return mCompassTileProvider.get();
+            case "cpuinfo":
+                return mCPUInfoTileProvider.get();
             case "heads_up":
                 return mHeadsUpTileProvider.get();
             case "reading_mode":
