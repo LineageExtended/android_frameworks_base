@@ -1294,4 +1294,7 @@
     <!-- ************************************************************************* -->
 
     <dimen name="keyguard_unfold_translation_x">16dp</dimen>
+
+     <!-- Network traffic -->
+    <dimen name="network_traffic_width">25sp</dimen>
 </resources>
